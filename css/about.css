@@ -1,0 +1,158 @@
+.about-hero {
+    padding-top: 190px;
+    padding-bottom: 110px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.about-hero h1 {
+    max-width: 900px;
+
+    font-size: clamp(52px, 8vw, 90px);
+    font-weight: 600;
+
+    letter-spacing: -0.045em;
+}
+
+.about-hero h1 span {
+    color: var(--accent);
+}
+
+.about-description {
+    max-width: 620px;
+
+    margin-top: 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* About Sections */
+
+.about-section {
+    padding: 110px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 80px;
+}
+
+.about-label {
+    padding-top: 8px;
+}
+
+.about-label span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--accent);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.about-label p {
+    color: var(--text-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.about-content {
+    max-width: 720px;
+}
+
+.about-content h2 {
+    margin-bottom: 28px;
+
+    font-size: clamp(34px, 5vw, 54px);
+
+    letter-spacing: -0.03em;
+}
+
+.about-content h2 span {
+    color: var(--accent);
+}
+
+.about-content p {
+    max-width: 680px;
+
+    margin-bottom: 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.about-content .button {
+    margin-top: 16px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .about-hero {
+        padding-top: 150px;
+        padding-bottom: 80px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(46px, 12vw, 72px);
+    }
+
+    .about-description {
+        font-size: 15px;
+    }
+
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .about-label {
+        padding-top: 0;
+    }
+
+    .about-content h2 {
+        font-size: clamp(34px, 9vw, 52px);
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .about-hero {
+        padding-top: 130px;
+    }
+
+    .about-section {
+        padding: 70px 0;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+}

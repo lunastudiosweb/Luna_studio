@@ -1,0 +1,177 @@
+/* Branches Hero */
+
+.branches-hero {
+    padding-top: 190px;
+    padding-bottom: 110px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.branches-hero h1 {
+    max-width: 900px;
+
+    font-size: clamp(52px, 8vw, 90px);
+    font-weight: 600;
+
+    letter-spacing: -0.045em;
+}
+
+.branches-hero h1 span {
+    color: var(--accent);
+}
+
+.branches-description {
+    max-width: 600px;
+
+    margin-top: 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* Branch List */
+
+.branches-list {
+    padding: 80px 0;
+}
+
+.branch-list {
+    border-top: 1px solid var(--border);
+}
+
+.branch-item {
+    display: grid;
+
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 48px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        padding var(--transition),
+        background var(--transition);
+}
+
+.branch-number {
+    color: var(--text-muted);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.branch-info {
+    max-width: 650px;
+}
+
+.branch-type {
+    margin-bottom: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.branch-info h2 {
+    margin-bottom: 12px;
+
+    font-size: 32px;
+}
+
+.branch-info p:last-child {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.branch-link {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: color var(--transition);
+}
+
+.branch-link:hover {
+    color: var(--accent);
+}
+
+.coming-soon .branch-info h2 {
+    color: var(--text-muted);
+}
+
+.coming-soon .branch-link {
+    color: var(--text-muted);
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .branches-hero {
+        padding-top: 150px;
+        padding-bottom: 80px;
+    }
+
+    .branches-hero h1 {
+        font-size: clamp(46px, 12vw, 72px);
+    }
+
+    .branches-description {
+        font-size: 15px;
+    }
+
+    .branch-item {
+        grid-template-columns: 45px 1fr;
+
+        gap: 20px;
+
+        padding: 36px 0;
+    }
+
+    .branch-link {
+        grid-column: 2;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .branches-hero {
+        padding-top: 130px;
+    }
+
+    .branches-list {
+        padding: 50px 0;
+    }
+
+    .branch-item {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .branch-number {
+        margin-bottom: 8px;
+    }
+
+    .branch-link {
+        grid-column: auto;
+
+        margin-top: 10px;
+    }
+}

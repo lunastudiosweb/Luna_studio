@@ -1,0 +1,159 @@
+/* Hero */
+
+.hero {
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 76px;
+}
+
+.hero-content {
+    width: min(100% - 48px, 1000px);
+    margin: 0 auto;
+
+    padding: 100px 0;
+}
+
+.hero-label {
+    margin-bottom: 24px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+.hero h1 {
+    max-width: 950px;
+
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 600;
+
+    letter-spacing: -0.045em;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 500px;
+
+    margin-top: 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 36px;
+}
+
+
+/* Intro */
+
+.intro {
+    padding: 150px 0;
+    border-top: 1px solid var(--border);
+}
+
+.intro .section-container {
+    max-width: 850px;
+}
+
+.intro h2 {
+    max-width: 800px;
+}
+
+.section-description {
+    max-width: 650px;
+
+    margin-top: 24px;
+
+    color: var(--text-secondary);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* Partners */
+
+.partners-preview {
+    padding: 150px 0;
+    border-top: 1px solid var(--border);
+}
+
+.partners-preview .section-container {
+    max-width: 850px;
+}
+
+.partners-preview h2 {
+    max-width: 700px;
+}
+
+.partners-preview .button {
+    margin-top: 32px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .hero {
+        min-height: calc(100vh - 70px);
+        margin-top: 70px;
+    }
+
+    .hero-content {
+        width: min(100% - 32px, 1000px);
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 12vw, 72px);
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .intro,
+    .partners-preview {
+        padding: 100px 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 260px;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .hero-label {
+        font-size: 9px;
+    }
+
+    .intro,
+    .partners-preview {
+        padding: 80px 0;
+    }
+}
