@@ -1,0 +1,193 @@
+.admin-page {
+    min-height: calc(100vh - 160px);
+    padding: 100px 24px;
+}
+
+.admin-header,
+.applications-section {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+}
+
+.admin-header {
+    margin-bottom: 90px;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+}
+
+.admin-header h1 span,
+.applications-top h2 span {
+    display: block;
+}
+
+.admin-description {
+    max-width: 650px;
+    margin-top: 30px;
+    line-height: 1.7;
+    opacity: 0.65;
+}
+
+
+.applications-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.applications-top h2 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+}
+
+
+.applications-status {
+    margin-bottom: 25px;
+    opacity: 0.6;
+}
+
+
+.applications-list {
+    display: grid;
+    gap: 20px;
+}
+
+
+.application-card {
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+.application-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+
+.application-header h3 {
+    margin: 0 0 7px;
+    font-size: 1.5rem;
+}
+
+
+.application-project {
+    margin: 0;
+    opacity: 0.55;
+}
+
+
+.application-status {
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+.application-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+
+.application-detail {
+    padding: 18px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+.application-detail strong {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.5;
+}
+
+
+.application-detail p {
+    margin: 0;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+.application-detail a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+
+.application-actions {
+    display: flex;
+    gap: 12px;
+    padding-top: 5px;
+}
+
+
+.application-actions button {
+    cursor: pointer;
+}
+
+
+.application-actions .reject-button {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.empty-applications {
+    padding: 60px 30px;
+    text-align: center;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    opacity: 0.6;
+}
+
+
+@media (max-width: 700px) {
+
+    .admin-page {
+        padding: 70px 20px;
+    }
+
+    .applications-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .application-header {
+        flex-direction: column;
+    }
+
+    .application-details {
+        grid-template-columns: 1fr;
+    }
+
+    .application-actions {
+        flex-direction: column;
+    }
+
+    .application-actions button {
+        width: 100%;
+    }
+
+}
