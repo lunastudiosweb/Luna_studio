@@ -1,0 +1,80 @@
+.login-page {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+}
+
+.login-card {
+    width: min(460px, 100%);
+    padding: 45px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.login-card h1 {
+    margin: 0;
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    line-height: 1;
+}
+
+.login-card h1 span {
+    display: block;
+}
+
+.login-description {
+    margin: 25px 0 40px;
+    line-height: 1.7;
+    opacity: 0.65;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 17px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.035);
+    color: inherit;
+    font: inherit;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.login-card button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+#login-status {
+    min-height: 20px;
+    margin-top: 18px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+
+    .login-card {
+        padding: 30px;
+    }
+
+}
