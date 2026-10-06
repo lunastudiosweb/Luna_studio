@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Staff Login | Luna Studios</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/staff-login.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="brand">
+            <span class="brand-name">LUNA</span>
+            <span class="brand-subtitle">STUDIOS</span>
+        </a>
+
+    </div>
+</header>
+
+
+<main class="login-page">
+
+    <div class="login-card">
+
+        <p class="section-label">
+            LUNA STUDIOS
+        </p>
+
+        <h1>
+            Staff
+            <span>Portal.</span>
+        </h1>
+
+        <p class="login-description">
+            Sign in to access the Luna Studios staff portal.
+        </p>
+
+
+        <form id="staff-login-form">
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit" class="button primary">
+                Sign In
+            </button>
+
+            <p id="login-status"></p>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Luna Studios. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/staff-login.js"></script>
+
+</body>
+</html>
