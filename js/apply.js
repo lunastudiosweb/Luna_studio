@@ -1,4 +1,3 @@
-
 const form = document.querySelector(".application-form");
 
 const SUPABASE_URL = window.LUNA_SUPABASE_URL;
@@ -116,6 +115,7 @@ form.addEventListener("submit", async (event) => {
                         application.offer
 
                 })
+
             });
 
         const discordResult =
@@ -169,4 +169,3 @@ form.addEventListener("submit", async (event) => {
     }
 
 });
-
