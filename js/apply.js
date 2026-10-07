@@ -5,7 +5,7 @@ const SUPABASE_URL = window.LUNA_SUPABASE_URL;
 const SUPABASE_KEY = window.LUNA_SUPABASE_ANON_KEY;
 
 const DISCORD_WORKER_URL =
-    "PASTE_YOUR_CLOUDFLARE_WORKER_URL_HERE";
+    "https://luna-studios-partner-applications.luna-studio-websites.workers.dev/";
 
 if (!SUPABASE_URL || !SUPABASE_KEY) {
     console.error("Luna Studios: Supabase configuration is missing.");
