@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-WEBSITE.com/sitemap.xml
+Sitemap: https://luna-studio.luna-studio-websites.workers.dev/sitemap.xml
