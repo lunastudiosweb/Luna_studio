@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
     <url>
         <loc>https://luna-studio.luna-studio-websites.workers.dev/</loc>
     </url>
-
     <url>
         <loc>https://luna-studio.luna-studio-websites.workers.dev/branches.html</loc>
     </url>
-
     <url>
         <loc>https://luna-studio.luna-studio-websites.workers.dev/partners.html</loc>
     </url>
-
     <url>
         <loc>https://luna-studio.luna-studio-websites.workers.dev/about.html</loc>
     </url>
-
     <url>
         <loc>https://luna-studio.luna-studio-websites.workers.dev/contact.html</loc>
     </url>
-
     <url>
         <loc>https://luna-studio.luna-studio-websites.workers.dev/apply.html</loc>
     </url>
-
 </urlset>
