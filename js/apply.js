@@ -16,7 +16,6 @@ const supabase = window.supabase.createClient(
     SUPABASE_KEY
 );
 
-
 form.addEventListener("submit", async (event) => {
 
     event.preventDefault();
@@ -26,7 +25,6 @@ form.addEventListener("submit", async (event) => {
 
     submitButton.disabled = true;
     submitButton.textContent = "Submitting...";
-
 
     const application = {
 
@@ -66,12 +64,7 @@ form.addEventListener("submit", async (event) => {
                 .trim()
     };
 
-
     try {
-
-        /*
-         * Save the application to Supabase.
-         */
 
         const { error: supabaseError } =
             await supabase
@@ -89,11 +82,6 @@ form.addEventListener("submit", async (event) => {
                 "Could not save the application."
             );
         }
-
-
-        /*
-         * Send the application to Discord.
-         */
 
         const discordResponse =
             await fetch(DISCORD_WORKER_URL, {
@@ -128,13 +116,10 @@ form.addEventListener("submit", async (event) => {
                         application.offer
 
                 })
-
             });
-
 
         const discordResult =
             await discordResponse.json();
-
 
         if (!discordResponse.ok ||
             !discordResult.success) {
@@ -144,29 +129,24 @@ form.addEventListener("submit", async (event) => {
                 discordResult
             );
 
-            /*
-             * The application is already safely
-             * stored in Supabase, so we don't
-             * delete it if Discord fails.
-             */
+            form.reset();
+
+            submitButton.disabled = false;
+            submitButton.textContent =
+                "Submit Application";
 
             alert(
                 "Your application was saved successfully, but the Discord notification could not be sent."
             );
 
-            form.reset();
-
-            submitButton.textContent =
-                "Application Submitted";
-
             return;
         }
 
-
         form.reset();
 
+        submitButton.disabled = false;
         submitButton.textContent =
-            "Application Submitted";
+            "Submit Application";
 
         alert(
             "Your partner application has been submitted successfully."
