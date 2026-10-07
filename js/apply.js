@@ -10,124 +10,141 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
     console.error("Luna Studios: Supabase configuration is missing.");
 }
 
-const supabase = window.supabase.createClient(
+const lunaSupabase = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
 );
 
-form.addEventListener("submit", async (event) => {
+if (!form) {
+    console.error("Luna Studios: Application form was not found.");
+} else {
 
-    event.preventDefault();
+    form.addEventListener("submit", async (event) => {
 
-    const submitButton =
-        form.querySelector('button[type="submit"]');
+        event.preventDefault();
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
+        const submitButton =
+            form.querySelector('button[type="submit"]');
 
-    const application = {
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
 
-        name:
-            document.getElementById("name")
-                .value
-                .trim(),
+        const application = {
 
-        discord:
-            document.getElementById("discord")
-                .value
-                .trim(),
+            name:
+                document.getElementById("name")
+                    .value
+                    .trim(),
 
-        project_name:
-            document.getElementById("project")
-                .value
-                .trim(),
+            discord:
+                document.getElementById("discord")
+                    .value
+                    .trim(),
 
-        website:
-            document.getElementById("website")
-                .value
-                .trim() || null,
+            project_name:
+                document.getElementById("project")
+                    .value
+                    .trim(),
 
-        description:
-            document.getElementById("description")
-                .value
-                .trim(),
+            website:
+                document.getElementById("website")
+                    .value
+                    .trim() || null,
 
-        reason:
-            document.getElementById("reason")
-                .value
-                .trim(),
+            description:
+                document.getElementById("description")
+                    .value
+                    .trim(),
 
-        offer:
-            document.getElementById("offer")
-                .value
-                .trim()
-    };
+            reason:
+                document.getElementById("reason")
+                    .value
+                    .trim(),
 
-    try {
+            offer:
+                document.getElementById("offer")
+                    .value
+                    .trim()
+        };
 
-        const { error: supabaseError } =
-            await supabase
-                .from("partner_applications")
-                .insert(application);
+        try {
 
-        if (supabaseError) {
+            const { error: supabaseError } =
+                await lunaSupabase
+                    .from("partner_applications")
+                    .insert(application);
 
-            console.error(
-                "Partner application Supabase error:",
-                supabaseError
-            );
+            if (supabaseError) {
 
-            throw new Error(
-                "Could not save the application."
-            );
-        }
+                console.error(
+                    "Partner application Supabase error:",
+                    supabaseError
+                );
 
-        const discordResponse =
-            await fetch(DISCORD_WORKER_URL, {
+                throw new Error(
+                    "Could not save the application."
+                );
+            }
 
-                method: "POST",
+            const discordResponse =
+                await fetch(DISCORD_WORKER_URL, {
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                    method: "POST",
 
-                body: JSON.stringify({
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-                    projectName:
-                        application.project_name,
+                    body: JSON.stringify({
 
-                    website:
-                        application.website,
+                        projectName:
+                            application.project_name,
 
-                    discord:
-                        application.discord,
+                        website:
+                            application.website,
 
-                    contact:
-                        application.name,
+                        discord:
+                            application.discord,
 
-                    description:
-                        application.description,
+                        contact:
+                            application.name,
 
-                    reason:
-                        application.reason,
+                        description:
+                            application.description,
 
-                    offer:
-                        application.offer
+                        reason:
+                            application.reason,
 
-                })
+                        offer:
+                            application.offer
 
-            });
+                    })
 
-        const discordResult =
-            await discordResponse.json();
+                });
 
-        if (!discordResponse.ok ||
-            !discordResult.success) {
+            const discordResult =
+                await discordResponse.json();
 
-            console.error(
-                "Discord application error:",
-                discordResult
-            );
+            if (!discordResponse.ok ||
+                !discordResult.success) {
+
+                console.error(
+                    "Discord application error:",
+                    discordResult
+                );
+
+                form.reset();
+
+                submitButton.disabled = false;
+                submitButton.textContent =
+                    "Submit Application";
+
+                alert(
+                    "Your application was saved successfully, but the Discord notification could not be sent."
+                );
+
+                return;
+            }
 
             form.reset();
 
@@ -136,36 +153,25 @@ form.addEventListener("submit", async (event) => {
                 "Submit Application";
 
             alert(
-                "Your application was saved successfully, but the Discord notification could not be sent."
+                "Your partner application has been submitted successfully."
             );
 
-            return;
+        } catch (error) {
+
+            console.error(
+                "Partner application error:",
+                error
+            );
+
+            alert(
+                "Something went wrong while submitting your application. Please try again."
+            );
+
+            submitButton.disabled = false;
+            submitButton.textContent =
+                "Submit Application";
         }
 
-        form.reset();
+    });
 
-        submitButton.disabled = false;
-        submitButton.textContent =
-            "Submit Application";
-
-        alert(
-            "Your partner application has been submitted successfully."
-        );
-
-    } catch (error) {
-
-        console.error(
-            "Partner application error:",
-            error
-        );
-
-        alert(
-            "Something went wrong while submitting your application. Please try again."
-        );
-
-        submitButton.disabled = false;
-        submitButton.textContent =
-            "Submit Application";
-    }
-
-});
+}
