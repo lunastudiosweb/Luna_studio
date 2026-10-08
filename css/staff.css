@@ -1,1 +1,222 @@
 
+/* =========================================
+   LUNA STUDIOS — STAFF
+   ========================================= */
+
+:root {
+    --background: #050505;
+    --surface: #0d0d0d;
+    --surface-hover: #121212;
+    --text: #ffffff;
+    --muted: #999999;
+    --border: #252525;
+    --border-hover: #444444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* =========================================
+   MAIN STAFF SECTION
+   ========================================= */
+
+.staff-section {
+    width: min(1400px, 90%);
+    margin: 0 auto;
+    padding: 140px 0 120px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.staff-header {
+    max-width: 900px;
+    margin-bottom: 110px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.staff-header h1 {
+    font-size: clamp(64px, 9vw, 140px);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    margin-bottom: 35px;
+}
+
+.intro {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 21px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   STAFF CONTAINER
+   ========================================= */
+
+#staff-container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* =========================================
+   STAFF CARD
+   ========================================= */
+
+.staff-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    min-height: 320px;
+    border-top: 1px solid var(--border);
+    padding-top: 35px;
+    transition:
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.staff-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   STAFF IMAGE
+   ========================================= */
+
+.staff-image-wrapper {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.staff-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.staff-card:hover .staff-image {
+    transform: scale(1.04);
+    filter: grayscale(0%);
+}
+
+/* =========================================
+   STAFF INFORMATION
+   ========================================= */
+
+.staff-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.staff-name {
+    font-size: clamp(38px, 5vw, 72px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.staff-role {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 35px;
+}
+
+.staff-description {
+    max-width: 650px;
+    color: #c5c5c5;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   STAFF NUMBER
+   ========================================= */
+
+.staff-number {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    color: #555555;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .staff-section {
+        width: 88%;
+        padding: 100px 0 80px;
+    }
+
+    .staff-header {
+        margin-bottom: 80px;
+    }
+
+    .staff-header h1 {
+        font-size: clamp(56px, 16vw, 90px);
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    #staff-container {
+        gap: 60px;
+    }
+
+    .staff-card {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .staff-image-wrapper {
+        width: 100%;
+        height: min(500px, 90vw);
+    }
+
+    .staff-info {
+        padding: 0;
+    }
+
+    .staff-number {
+        top: 20px;
+        right: 10px;
+    }
+}
